@@ -1,5 +1,4 @@
 # Dotfiles
 
-```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ksu006
-```
+1. [Install chezmoi](https://www.chezmoi.io/install/)
+2. `chezmoi init ksu006`
