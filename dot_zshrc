@@ -1,7 +1,7 @@
 # Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
 
-export EDITOR=vim
+export EDITOR=nvim
 export LESS=-FRX
 
 typeset -U path
