@@ -23,8 +23,10 @@ setopt HIST_VERIFY
 setopt SHARE_HISTORY
 
 # zinit
-[ -f ~/.zinit/bin/zinit.zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-source ~/.zinit/bin/zinit.zsh
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
 zinit ice lucid pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
